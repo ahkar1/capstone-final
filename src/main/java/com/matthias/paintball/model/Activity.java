@@ -1,11 +1,17 @@
 package com.matthias.paintball.model;
 
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Activity {
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     private int gun_id;
-    private List<Images> images;
+    private String images;
     private String title;
     private String notes;
     private String date;
@@ -26,11 +32,11 @@ public class Activity {
         this.gun_id = gun_id;
     }
 
-    public List<Images> getImages() {
+    public String getImages() {
         return images;
     }
 
-    public void setImages(List<Images> images) {
+    public void setImages(String images) {
         this.images = images;
     }
 
